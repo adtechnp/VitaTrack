@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- MANDATORY: Declare support for both light and dark themes per Modern Web Guidance -->
+  <meta name="color-scheme" content="light dark">
+  
+  <title>VitaTrack — Smart Daily Health, Nutrition & Habit Tracker</title>
+  <meta name="description" content="VitaTrack is your privacy-first health tracker for Android. Count daily steps, log calories and macros, stay hydrated, track weight trends, and conquer 7-day micro-challenges.">
+  <meta name="keywords" content="health tracker, calorie counter, step counter, water intake, weight tracker, BMI calculator, habit tracker, privacy first health app">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VitaTrack — Smart Daily Health & Habit Tracker">
+  <meta property="og:description" content="All-in-one daily wellness companion. 100% on-device privacy, zero forced accounts, battery-friendly tracking.">
+  <meta property="og:image" content="assets/icons/vt-icon.png">
+  
+  <link rel="icon" type="image/png" href="assets/icons/vt-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── Site Header & Navigation ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="VitaTrack Home">
+        <img src="assets/icons/vt-icon.png" alt="VitaTrack App Logo" width="36" height="36">
+        <span>VitaTrack</span>
+        <span class="logo-badge">v1.0</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary Navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#features" aria-current="page">Features</a></li>
+          <li><a href="#why-vitatrack">Privacy & Architecture</a></li>
+          <li><a href="#challenge">7-Day Challenge</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme">
+            <!-- Sun icon for dark mode (click to make light) -->
+            <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0z"/>
+            </svg>
+            <!-- Moon icon for light mode (click to make dark) -->
+            <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.3 2a10 10 0 0 0-.19 20 10.04 10.04 0 0 0 9.7-7.23 1 1 0 0 0-1.25-1.25A8.04 8.04 0 0 1 10.6 3.44a1 1 0 0 0-1.25-1.25A10.1 10.1 0 0 0 12.3 2z"/>
+            </svg>
+          </button>
+
+          <a href="#download" class="btn btn-primary">Download Free</a>
+
+          <button id="mobile-menu-btn" class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── Main Content ─────────────────────────────────────────────────────── -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="pulse-dot"></span>
+            <span>VitaTrack 1.0 • Privacy-First Health</span>
+          </div>
+
+          <h1 class="hero-title">
+            Track Smarter.<br>
+            <span class="gradient-text">Live Healthier.</span><br>
+            Own Your Data.
+          </h1>
+
+          <p class="hero-subtitle">
+            The elegant all-in-one daily wellness companion. Monitor steps, manage calories & macros, track hydration, conquer 7-day habit challenges, and visualize weight trends — completely stored on your device with 100% privacy.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#download" class="btn-store" aria-label="Get on Google Play">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3.6 2.3A1.5 1.5 0 0 0 3 3.6v16.8a1.5 1.5 0 0 0 .6 1.3l9.4-9.7L3.6 2.3zm10.7 8.3 2.5 1.4-8.8 8.8 6.3-10.2zm2.5-1.4-2.5 1.4L8 2.2l8.8 8.4zm.8 1.9-2.7 1.5-2.7-1.5 5.4-3.1a1 1 0 0 1 1 0l-1 3.1z"/>
+              </svg>
+              <div class="btn-store-text">
+                <small>GET IT ON</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+
+            <a href="#features" class="btn btn-secondary">
+              Explore Features
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <span>100% On-Device SQLite</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              <span>Offline First</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Zero Account Required</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Phone Mockup -->
+        <div class="phone-mockup-wrapper">
+          <div class="phone-mockup" role="region" aria-label="Interactive App Screen Mockup">
+            <div class="phone-notch"></div>
+            
+            <div class="phone-screen">
+              <!-- App Bar -->
+              <div class="screen-app-bar">
+                <div>
+                  <div class="user-pill">Hello, Alex 👋</div>
+                  <div class="date-sub">Wednesday, 18 November</div>
+                </div>
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface-elevated); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--color-teal);">
+                  VT
+                </div>
+              </div>
+
+              <!-- Steps Card -->
+              <div class="screen-card">
+                <div class="screen-card-header">
+                  <span class="screen-card-title">Daily Steps</span>
+                  <span style="font-size: 0.65rem; font-weight: 700; color: var(--color-purple);">Goal: 8,000</span>
+                </div>
+                <div class="metric-highlight">6,420</div>
+                <div class="metric-sub">4.8 km walked • 280 kcal burned</div>
+                <div class="screen-progress-bar">
+                  <div class="screen-progress-fill fill-purple"></div>
+                </div>
+              </div>
+
+              <!-- Water Tracker Card -->
+              <div class="screen-card">
+                <div class="screen-card-header">
+                  <span class="screen-card-title">Hydration</span>
+                  <span style="font-size: 0.65rem; font-weight: 700; color: var(--color-blue);">Goal: 2,500 ml</span>
+                </div>
+                <div class="metric-highlight" style="color: var(--color-blue);">1,750 <span style="font-size: 0.85rem; font-weight: 600;">ml</span></div>
+                <div class="metric-sub">70% of your daily water intake</div>
+                <div class="screen-progress-bar">
+                  <div class="screen-progress-fill fill-blue"></div>
+                </div>
+              </div>
+
+              <!-- Calorie & Macros Card -->
+              <div class="screen-card">
+                <div class="screen-card-header">
+                  <span class="screen-card-title">Nutrition & Calories</span>
+                  <span style="font-size: 0.65rem; font-weight: 700; color: var(--color-teal);">1,640 / 2,100 kcal</span>
+                </div>
+                <div class="screen-progress-bar">
+                  <div class="screen-progress-fill fill-teal"></div>
+                </div>
+                <div class="screen-macro-grid">
+                  <div class="screen-macro-pill">
+                    <span style="color: #FF962E; font-size: 0.6rem;">Carbs</span>
+                    <strong>180g</strong>
+                  </div>
+                  <div class="screen-macro-pill">
+                    <span style="color: #9873DF; font-size: 0.6rem;">Protein</span>
+                    <strong>112g</strong>
+                  </div>
+                  <div class="screen-macro-pill">
+                    <span style="color: #008EF5; font-size: 0.6rem;">Fat</span>
+                    <strong>48g</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 7-Day Challenge Pill -->
+              <div class="screen-card" style="background: linear-gradient(135deg, rgba(0, 158, 151, 0.12), rgba(0, 142, 245, 0.08)); border-color: rgba(0, 158, 151, 0.3);">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div>
+                    <div style="font-size: 0.65rem; font-weight: 800; color: var(--color-teal); text-transform: uppercase;">Active Challenge</div>
+                    <div style="font-size: 0.85rem; font-weight: 800; color: var(--color-navy);">Day 4: Small Wins Club</div>
+                  </div>
+                  <div style="font-size: 0.75rem; font-weight: 800; color: var(--color-teal); background: var(--color-surface); padding: 4px 8px; border-radius: 20px;">
+                    3/3 Done
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Bottom Navigation -->
+            <div class="phone-nav-bar">
+              <div class="phone-nav-item active" data-tab="home">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <span>Today</span>
+              </div>
+              <div class="phone-nav-item" data-tab="progress">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                <span>Progress</span>
+              </div>
+              <div class="phone-nav-item" data-tab="challenge">
+                <svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.93-.41 3.42-1.93 3.61-3.96C19.08 11.63 21 9.55 21 8V7c0-1.1-.9-2-2-2z"/></svg>
+                <span>Challenge</span>
+              </div>
+              <div class="phone-nav-item" data-tab="profile">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <span>Profile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Core Features Grid ─────────────────────────────────────────────── -->
+    <section id="features" class="features-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Designed for Daily Balance</span>
+          <h2 class="section-title">Everything you need to build lifelong healthy habits</h2>
+          <p class="section-subtitle">No overwhelming clutter, no intrusive notifications, no paid paywalls for core health tracking. Just clean, thoughtful wellness tools.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1: Steps -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper icon-purple">
+              <img src="assets/images/running_person.png" alt="Step Counter Icon">
+            </div>
+            <h3 class="feature-title">Hardware Step Counter</h3>
+            <p class="feature-desc">
+              Harnesses your smartphone's dedicated pedometer sensor for battery-efficient, continuous daily step counting with automatic distance and calorie calculation.
+            </p>
+            <ul class="feature-perks">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Real-time pedometer sensor integration</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Background tracking with minimal battery impact</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Daily 8,000 step milestone goals</li>
+            </ul>
+          </article>
+
+          <!-- Feature 2: Nutrition -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper icon-teal">
+              <img src="assets/images/calorie_flame.png" alt="Nutrition Flame Icon">
+            </div>
+            <h3 class="feature-title">Calorie & Macro Tracker</h3>
+            <p class="feature-desc">
+              Log your meals across Breakfast, Lunch, Dinner, and Snacks. Keep track of daily caloric intake alongside carbohydrates, proteins, and healthy fats.
+            </p>
+            <ul class="feature-perks">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Customizable daily calorie targets</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Macro breakdown (Carbs, Protein, Fat)</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Categorized meal log history</li>
+            </ul>
+          </article>
+
+          <!-- Feature 3: Hydration -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper icon-blue">
+              <img src="assets/images/water_bottle.png" alt="Hydration Bottle Icon">
+            </div>
+            <h3 class="feature-title">Smart Hydration Engine</h3>
+            <p class="feature-desc">
+              Never forget to drink water. Log fluid intake with one-tap presets (200 ml, 250 ml, 500 ml) with animated liquid physics and personalized daily hydration goals.
+            </p>
+            <ul class="feature-perks">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> One-tap quick presets (Glass, Cup, Bottle)</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Tilt-reactive liquid level indicator</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Gentle offline periodic notifications</li>
+            </ul>
+          </article>
+
+          <!-- Feature 4: Weight & BMI -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper icon-orange">
+              <img src="assets/images/weigh_scale.png" alt="Weigh Scale Icon">
+            </div>
+            <h3 class="feature-title">Weight & BMI Monitoring</h3>
+            <p class="feature-desc">
+              Track weight fluctuations over time, calculate accurate BMI categories, and visualize trends toward your target weight with seamless metric/imperial unit switching.
+            </p>
+            <ul class="feature-perks">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> kg, lbs, and stones (st & lbs) support</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Standard WHO Body Mass Index categorization</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Target weight countdown & progression charts</li>
+            </ul>
+          </article>
+
+          <!-- Feature 5: 7-Day Challenge -->
+          <article class="feature-card" id="challenge">
+            <div class="feature-icon-wrapper icon-mint">
+              <img src="assets/images/trophy.png" alt="Trophy Challenge Icon">
+            </div>
+            <h3 class="feature-title">7-Day "Small Wins" Club</h3>
+            <p class="feature-desc">
+              Transform your lifestyle through achievable micro-commitments: walk 8,000 steps, drink 2.5L water, and log 5 mindful breathing minutes every day for 7 days.
+            </p>
+            <ul class="feature-perks">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 7 progressive milestone steps</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Built-in mindful moment reflection timer</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Unlockable achievement badges & streaks</li>
+            </ul>
+          </article>
+
+          <!-- Feature 6: Calendar & Analytics -->
+          <article class="feature-card">
+            <div class="feature-icon-wrapper icon-teal">
+              <img src="assets/images/calendar.png" alt="Calendar Analytics Icon">
+            </div>
+            <h3 class="feature-title">Progress & Calendar History</h3>
+            <p class="feature-desc">
+              Review your historical logs day by day with an intuitive interactive calendar. Spot patterns in your calorie intake, hydration consistency, and activity milestones.
+            </p>
+            <ul class="feature-perks">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Day-by-day historical calendar view</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Beautiful trend charts powered by FL Chart</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Comprehensive weekly summaries</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Why VitaTrack (Privacy & Technical Pillars) ───────────────────── -->
+    <section id="why-vitatrack" class="privacy-highlight-section">
+      <div class="container">
+        <div class="highlight-box">
+          <div>
+            <span class="section-tag">Privacy by Design</span>
+            <h2 class="highlight-title">Your health data belongs to you. Not to our servers.</h2>
+            <p class="highlight-desc">
+              Unlike traditional fitness platforms that upload your weight, meals, and private habits to the cloud, VitaTrack operates entirely on your device using local SQLite (Drift) storage.
+            </p>
+
+            <div class="highlight-points">
+              <div class="highlight-point-card">
+                <h4>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  On-Device Storage
+                </h4>
+                <p>Every logged meal, water drop, and step count is written to a private local SQLite database on your hardware.</p>
+              </div>
+
+              <div class="highlight-point-card">
+                <h4>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                  Full Offline Mode
+                </h4>
+                <p>No internet connection needed. Track your health in airplane mode, outdoors, or in remote workouts seamlessly.</p>
+              </div>
+
+              <div class="highlight-point-card">
+                <h4>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                  Zero Forced Accounts
+                </h4>
+                <p>No passwords to remember, no email signups, and zero third-party profile scraping.</p>
+              </div>
+
+              <div class="highlight-point-card">
+                <h4>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                  Instant Data Deletion
+                </h4>
+                <p>You can wipe all data with one tap in your profile or by clearing app storage anytime.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <img src="assets/images/vt-logo.jpeg" alt="VitaTrack Brand Emblem" style="max-width: 320px; border-radius: 28px; box-shadow: 0 16px 36px var(--color-shadow); margin-inline: auto;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ Section ─────────────────────────────────────────────────────── -->
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Common Questions</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know about the app, permissions, and publishing.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Is VitaTrack free to use?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Yes! VitaTrack is completely free to download and use. All core fitness tracking features — including steps, nutrition, hydration, and the 7-day challenge — are fully accessible to every user without any subscription.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Why does VitaTrack request Activity Recognition permission?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              VitaTrack uses Android's <code>ACTIVITY_RECOGNITION</code> permission and native hardware step detector sensors to count your steps accurately while conserving your phone's battery. This sensor data is processed strictly on your device and is never shared or transmitted anywhere.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Does VitaTrack upload my health measurements to the cloud?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              No. We believe your health metrics belong solely to you. VitaTrack uses an on-device SQLite database via Drift. We do not operate remote servers to store your weight, meals, steps, or personal notes.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can I switch between Metric and Imperial units?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              Yes! You can toggle between Metric (kg, cm, ml) and Imperial (lbs, feet/inches, oz) anytime from your Profile settings. Your historical numbers will adapt seamlessly across all screens.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How does advertising work in VitaTrack?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              To support continuous development while keeping the app free, VitaTrack integrates Google AdMob for banner ads. Google AdMob may use device advertising identifiers (AAID) in accordance with Google's Privacy Policy. For complete details, see our <a href="privacy.html">Privacy Policy</a>.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Download CTA Banner ────────────────────────────────────────────── -->
+    <section id="download" class="cta-section">
+      <div class="container cta-box">
+        <h2 class="cta-title">Start your wellness journey today</h2>
+        <p class="cta-subtitle">Download VitaTrack and take control of your daily habits with confidence and complete privacy.</p>
+        
+        <div class="cta-buttons">
+          <a href="#" class="btn-store" aria-label="Download from Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.6 2.3A1.5 1.5 0 0 0 3 3.6v16.8a1.5 1.5 0 0 0 .6 1.3l9.4-9.7L3.6 2.3zm10.7 8.3 2.5 1.4-8.8 8.8 6.3-10.2zm2.5-1.4-2.5 1.4L8 2.2l8.8 8.4zm.8 1.9-2.7 1.5-2.7-1.5 5.4-3.1a1 1 0 0 1 1 0l-1 3.1z"/>
+            </svg>
+            <div class="btn-store-text">
+              <small>AVAILABLE NOW ON</small>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+
+          <a href="privacy.html" class="btn btn-secondary">
+            Read Privacy Policy
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── Site Footer ──────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <img src="assets/icons/vt-icon.png" alt="VitaTrack Logo" width="30" height="30">
+            <span>VitaTrack</span>
+          </a>
+          <p>
+            Smart daily health, step, nutrition, and hydration tracker engineered with privacy-first on-device storage.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#challenge">7-Day Challenge</a></li>
+            <li><a href="#why-vitatrack">Architecture</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal & Safety</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html#permissions">Permission Notice</a></li>
+            <li><a href="privacy.html#advertising">AdMob Disclosure</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Publisher</h4>
+          <ul class="footer-links">
+            <li><span>AdTech Software</span></li>
+            <li><span>Application: <code>com.adtech.vitatrack</code></span></li>
+            <li><a href="mailto:support@adtech.com">support@adtech.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="copyright-year">2026</span> VitaTrack. All rights reserved.</div>
+        <div>Designed for healthy lifestyles &amp; on-device privacy.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
